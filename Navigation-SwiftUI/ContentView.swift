@@ -32,7 +32,7 @@ struct SomeView: View {
                     })
                 } else {
                     // move on case
-                    NavigationLink("Login", destination: SecondView())
+                    NavigationLink("Login", destination: Text("Login successfully"))
                 }
             }.padding(.horizontal, 20.0).alert(isPresented: $showErrorMessage) { () -> Alert in
                 Alert(title: Text("Important Message"), message: Text("Please Fill all the Fields"), primaryButton: .default(Text("Ok")), secondaryButton: .destructive(Text("Cancel")))
@@ -41,3 +41,8 @@ struct SomeView: View {
     }
 }
 
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        SomeView()
+    }
+}
